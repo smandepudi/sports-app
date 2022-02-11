@@ -1,0 +1,122 @@
+<div class="resultsView">
+  <div class="result-header">
+    <h4>Choose the sports results you would like to display</h4>
+    <select class="sport-options" (change)="updateSportSelection($event)">
+      <option *ngFor="let result of this.sportOptions" [value]="result">
+        {{ result }}
+      </option>
+    </select>
+  </div>
+
+  <div
+    class="tennisResults pb-5"
+    *ngIf="
+      (this.selectedSport === sportTypeKeyEnum.tennisResults ||
+        this.selectedSport === sportTypeKeyEnum.allResults) &&
+      this.tennisResultsToDisplay.length > 0
+    "
+  >
+    <h4>Tennis Results</h4>
+    <div class="result-header-row">
+      <div class="result-list__col">Looser</div>
+      <div class="result-list__col">Sets</div>
+      <div class="result-list__col">Date</div>
+      <div class="result-list__col">Tournament</div>
+      <div class="result-list__col">Winner</div>
+    </div>
+
+    <div *ngFor="let tennisResult of tennisResultsToDisplay; index as i">
+      <div class="result-list__row">
+        <div class="result-list__col">
+          {{ tennisResult?.looser }}
+        </div>
+        <div class="result-list__col">
+          {{ tennisResult?.numberOfSets }}
+        </div>
+        <div class="result-list__col">
+          {{ tennisResult?.publicationDate }}
+        </div>
+        <div class="result-list__col">
+          {{ tennisResult?.tournament }}
+        </div>
+        <div class="result-list__col">
+          {{ tennisResult?.winner }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="nbaResults pb-5"
+    *ngIf="
+      (this.selectedSport === sportTypeKeyEnum.nbaResults ||
+        this.selectedSport === sportTypeKeyEnum.allResults) &&
+      this.nbaResultsToDisplay.length > 0
+    "
+  >
+    <h4>NBA Results</h4>
+    <div class="result-header-row">
+      <div class="result-list__col">GameNumber</div>
+      <div class="result-list__col">Looser</div>
+      <div class="result-list__col">MVP</div>
+      <div class="result-list__col">Date</div>
+      <div class="result-list__col">Tournament</div>
+      <div class="result-list__col">Winner</div>
+    </div>
+    <div *ngFor="let nbaResult of nbaResultsToDisplay; index as i">
+      <div class="result-list__row">
+        <div class="result-list__col">
+          {{ nbaResult?.looser }}
+        </div>
+        <div class="result-list__col">
+          {{ nbaResult?.gameNumber }}
+        </div>
+        <div class="result-list__col">
+          {{ nbaResult?.mvp }}
+        </div>
+        <div class="result-list__col">
+          {{ nbaResult?.publicationDate }}
+        </div>
+        <div class="result-list__col">
+          {{ nbaResult?.tournament }}
+        </div>
+        <div class="result-list__col">
+          {{ nbaResult?.winner }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="f1Results pb-5"
+    *ngIf="
+      (this.selectedSport === sportTypeKeyEnum.f1Results ||
+        this.selectedSport === sportTypeKeyEnum.allResults) &&
+      this.f1ResultsToDisplay.length > 0
+    "
+  >
+    <h4>F1 Results</h4>
+    <div class="result-header-row">
+      <div class="result-list__col">Date</div>
+      <div class="result-list__col">Seconds</div>
+      <div class="result-list__col">Tournament</div>
+      <div class="result-list__col">Winner</div>
+    </div>
+    <div *ngFor="let f1Result of f1ResultsToDisplay; index as i">
+      <div class="result-list__row">
+        <div class="result-list__col">
+          {{ f1Result?.publicationDate }}
+        </div>
+        <div class="result-list__col">
+          {{ f1Result?.seconds }}
+        </div>
+        <div class="result-list__col">
+          {{ f1Result?.tournament }}
+        </div>
+        <div class="result-list__col">
+          {{ f1Result?.winner }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
