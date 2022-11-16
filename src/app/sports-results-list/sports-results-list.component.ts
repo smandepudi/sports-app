@@ -38,7 +38,7 @@ export class SportsResultsListComponent implements OnInit {
 
   // sorting sport results in each group  in reverse chronological order
   sortResults(resultsArr: any): any {
-    return resultsArr.sort((d1: any, d2: any) => new Date(d2.publicationDate).getTime() - new Date(d1.publicationDate).getTime());
+    return resultsArr.sort((d1: any, d2: any) => new Date(d2.publicationDate).getDate() - new Date(d1.publicationDate).getDate());
   }
 
   // update the selected sport based on the dropdown selection
