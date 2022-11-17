@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { SportsService } from './sports.service';
 import { SportsResults } from './models/sports-results.model';
 
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit{
     this.getSportResults();
   }
   getSportResults() {
-    // service api call to get all results
+    // service api call to GET sport results
     this.sportsService.getAllResults().subscribe((data: SportsResults) => {
       this.results = data;
     });
