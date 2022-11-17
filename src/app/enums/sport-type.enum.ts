@@ -1,5 +1,5 @@
 export enum SportType {
-    allResults = 'All results',
+    allResults = 'All sport results',
     tennisResults = 'Tennis',
     nbaResults = 'NBA',
     f1Results = 'F1',
