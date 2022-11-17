@@ -15,8 +15,8 @@ export class SportsService {
   constructor(private http:HttpClient) { }
 
   public getAllResults(): Observable<SportsResults> {
-    const headers = { 'Authorization': 'Bearer my-tojen' };
-    const body = { title: 'Angular POST Request Example' };
+    const headers = { 'Authorization': 'Bearer my-token' };
+    const body = { title: 'Angular POST Request' };
     const url = 'https://ancient-wood-1161.getsandbox.com:443/results';
     return this.http.post(url, body, { headers }).
       pipe(
