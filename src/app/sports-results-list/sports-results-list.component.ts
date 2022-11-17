@@ -36,7 +36,7 @@ export class SportsResultsListComponent implements OnInit {
     }
   }
 
-  // sorting sport results in each group  in reverse chronological order
+  // sorting sport results with in each group in reverse chronological order
   sortResults(resultsArr: any): any {
     return resultsArr.sort((d1: any, d2: any) => new Date(d2.publicationDate).getDate() - new Date(d1.publicationDate).getDate());
   }
